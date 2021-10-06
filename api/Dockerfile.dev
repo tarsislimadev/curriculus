@@ -1,0 +1,11 @@
+FROM node:lts
+
+ENV API_URL=http://localhost:2100/v1
+
+WORKDIR /api
+
+COPY . .
+
+RUN npm i
+
+CMD npx nodemon
