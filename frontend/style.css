@@ -1,0 +1,57 @@
+* {
+  outline: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+input,
+textarea,
+button {
+  border: 1px solid #000000;
+  font: inherit;
+}
+
+button {
+  padding: .5rem;
+}
+
+.header {
+  text-align: center;
+}
+
+.header h1 {
+  padding: 1rem;
+}
+
+.container {
+  margin: 0 auto;
+  width: 800px;
+}
+
+/* .input-text {} */
+
+.input-text label {
+  display: inline-block;
+  width: 100%;
+}
+
+.input-text input {
+  display: inline-block;
+  padding: .5rem;
+  width: 100%;
+}
+
+.button-group {
+  text-align: right;
+}
+
+.button-group {
+  margin: .5rem 0;
+}
