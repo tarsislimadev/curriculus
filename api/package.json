@@ -1,0 +1,17 @@
+{
+  "name": "pdf-api",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "html-pdf": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/html-pdf": "^2.2.1"
+  }
+}
