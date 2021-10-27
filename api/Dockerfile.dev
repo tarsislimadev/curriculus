@@ -2,10 +2,10 @@ FROM node:lts
 
 ENV API_URL=http://localhost:2100/v1
 
-WORKDIR /api
+ENV DBURL=postgres://pdf:pdf@postgres:5432/pdf
+
+WORKDIR /app
 
 COPY . .
 
-RUN npm i
-
-CMD npx nodemon
+CMD  npm ci && npx nodemon
