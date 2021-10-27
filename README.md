@@ -4,17 +4,30 @@ API em Node.js para produção de currículos em PDF.
 
 ## Tecnologias / Ferramentas
 
-[ ] JavaScript
-[ ] Node.js
-[ ] Angular
+[x] JavaScript
+
+[x] Node.js
+
+[x] Angular
+
 [ ] SOLID
-[ ] REST API
+
+[x] REST API
+
 [ ] AWS
-[ ] Docker
+
+[x] Docker
+
 [ ] Kubernetes
-[ ] Postgres
+
+[x] Postgres
+
 [ ] ElasticSearch
+
 [ ] Redis
+
 [ ] RabbitMQ
+
 [ ] Sequelize
+
 [ ] Material Design
