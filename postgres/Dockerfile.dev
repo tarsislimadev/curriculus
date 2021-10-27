@@ -1,0 +1,7 @@
+FROM postgres:13.4-alpine
+
+ENV POSTGRES_PASSWORD=pdf
+
+ENV POSTGRES_USER=pdf
+
+ENV POSTGRES_DB=pdf
