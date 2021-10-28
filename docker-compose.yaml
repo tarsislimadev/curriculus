@@ -4,8 +4,10 @@ services:
   postgres:
     restart: always
     build:
-      context: ./api
+      context: ./postgres
       dockerfile: Dockerfile.dev
+    ports:
+      - '5432:5432'
   api:
     restart: always
     build:
