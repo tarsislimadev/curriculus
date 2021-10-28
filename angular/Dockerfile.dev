@@ -1,7 +1,7 @@
-FROM node:lts-alpine
+FROM node:lts
 
 WORKDIR /app
 
 COPY . .
 
-CMD npm ci && npm serve
+CMD npm ci && npm start
