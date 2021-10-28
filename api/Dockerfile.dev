@@ -8,4 +8,4 @@ WORKDIR /app
 
 COPY . .
 
-CMD  npm ci && npx nodemon
+CMD npm ci && npm start
