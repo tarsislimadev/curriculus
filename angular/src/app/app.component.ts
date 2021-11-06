@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
 type ContactType = 'phone' | 'whatsapp' | 'email' | 'facebook' | 'linkedin'
+type JobType = 'clt' | 'pj'
 
 class ExperienceModel {
   public constructor(
-    public job_type: 'clt' | 'pj' = 'clt',
+    public job_type: JobType = 'clt',
     public job_name: string = '',
     public employee_name: string = '',
     public address: string = '',
@@ -43,8 +44,7 @@ class FormModel {
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   public form: FormModel = new FormModel();
@@ -61,6 +61,25 @@ export class AppComponent {
     { key: 'facebook', value: 'Facebook' },
     { key: 'linkedin', value: 'Linkedin' },
   ]
+
+  public personal_status_types: any[] = [
+    { key: 'single', value: 'Solteiro' },
+  ]
+
+  public addExperience (): boolean {
+    this.form.experience_list.push(new ExperienceModel())
+    return false
+  }
+
+  public addFormation (): boolean {
+    this.form.formation_list.push(new FormationModel())
+    return false
+  }
+
+  public addContact (): boolean {
+    this.form.contact_list.push(new ContactModel('phone'))
+    return false
+  }
 
   public downloadPDF(): void {
   }
