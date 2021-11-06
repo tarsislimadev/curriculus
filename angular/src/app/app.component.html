@@ -1,34 +1,37 @@
 <div class="container">
+  <h1>Curriculo API</h1>
 
   <div class="input-text">
     <label for="id-name">Nome:</label>
-    <input type="text" >
+    <input type="text" placeholder="Jonas Silva">
   </div>
 
-  <div class="grid-line">
-    <div class="grid-column">
+  <div class="g-line">
+    <div class="g-column-3">
       <div class="input-text">
         <label for="id-name">Data de nascimento:</label>
-        <input type="text" >
+        <input type="text" placeholder="01/01/2001">
       </div>
     </div>
-    <div class="grid-column">
-      <div class="input-text">
-        <label for="id-name">Estado civil:</label>
-        <input type="text" >
+    <div class="g-column-3">
+      <div class="input-unique">
+        <label for="id-name">Estado cívil:</label>
+        <select>
+          <option *ngFor="let personal_status_type of personal_status_types" value="{{ personal_status_type.key }}">{{ personal_status_type.value }}</option>
+        </select>
       </div>
     </div>
-    <div class="grid-column">
+    <div class="g-column-3">
       <div class="input-text">
         <label for="id-name">Número de filhos:</label>
-        <input type="text" >
+        <input type="text" placeholder="">
       </div>
     </div>
   </div>
 
   <div class="input-text">
     <label for="id-name">Endereço:</label>
-    <input type="text" >
+    <input type="text" placeholder="">
   </div>
 
 
@@ -36,73 +39,110 @@
 
   <div *ngFor="let contact of form.contact_list">
     
-    <div class="grid-line">
-      <div class="input-unique field-job-title">
+    <div class="g-line">
+      <div class="input-unique g-column-10">
         <select>
           <option *ngFor="let contact_type of contact_types" value="{{ contact_type.key }}">{{ contact_type.value }}</option>
         </select>
       </div>
-      <div class="input-text field-job-name">
+      <div class="input-text g-column-90">
         <input type="text" placeholder="">
       </div>
     </div>
 
   </div><!-- Contatos -->
 
-  <div class="button-group">
-    <a href="#" class="button">Adicionar contato</a>
+  <div class="button-group right-button-group">
+    <a href="#" class="button" (click)="addContact()">Adicionar contato</a>
   </div>
 
   <h3>Experiências</h3>
 
   <div *ngFor="let experience of form.experience_list">
 
-    <div class="grid-line">
-      <div class="input-unique field-job-title">
+    <div class="g-line">
+      <div class="input-unique g-column-10">
+        <label for="id-name">Contrato:</label>
         <select>
           <option *ngFor="let job_type of job_types" value="{{ job_type.key }}">{{ job_type.value }}</option>
         </select>
       </div>
-      <div class="input-text field-job-name">
+
+      <div class="input-text g-column-90">
+        <label for="id-name">Cargo:</label>
         <input type="text" placeholder="Engenheiro">
       </div>
     </div>
 
-    <div class="grid-line">
-      <div class="input-text field-job-employee">
+    <div class="g-line">
+      <div class="input-text g-column-50">
+        <label for="id-name">Empresa:</label>
         <input type="text" placeholder="Microsoft">
       </div>
-      <div class="input-text field-job-address">
-        <input type="text" placeholder="New York, Miami, USA">
+
+      <div class="input-text g-column-50">
+        <label for="id-name">Cidade / Estado:</label>
+        <input type="text" placeholder="São Paulo / SP">
       </div>
     </div>
 
-    <div class="grid-line">
-      <div class="input-text field-job-date-begin">
+    <div class="g-line">
+      <div class="input-text g-column-50">
+        <label for="id-name">Data de início:</label>
         <input type="text" placeholder="01/1990">
       </div>
-      <div class="input-text field-job-date-end">
-        <input type="text" placeholder="01/1990">
+      <div class="input-text g-column-50">
+        <label for="id-name">Data de termino:</label>
+        <input type="text" placeholder="01/2000">
       </div>
     </div>
 
   </div><!-- Experiências -->
 
-  <div class="button-group">
-    <a href="#" class="button">Adicionar experiência</a>
+  <div class="button-group right-button-group">
+    <a href="#" class="button" (click)="addExperience()">Adicionar experiência</a>
   </div>
 
   <h3>Formações</h3>
 
   <div *ngFor="let formation of form.formation_list">
-    <div class="input-text">
-      <label for="id-name">Contato:</label>
-      <input type="text" >
+
+    <div class="input-text g-column-formation-class-name">
+      <label for="id-name">Curso:</label>
+      <input type="text" placeholder="Engenharia Elétrica">
     </div>
+
+    <div class="input-text g-column-formation-school">
+      <label for="id-name">Instituição de ensino:</label>
+      <input type="text" placeholder="Anhanguera">
+    </div>
+
+    <div class="input-text g-column-formation-city">
+      <label for="id-name">Cidade / Estado:</label>
+      <input type="text" placeholder="São Paulo / SP">
+    </div>
+
+    <div class="g-line">
+      <div class="input-text g-column-formation-date-begin g-column-50">
+        <label for="id-name">Data de início:</label>
+        <input type="text" placeholder="01/1990">
+      </div>
+      <div class="input-text g-column-formation-date-end g-column-50">
+        <label for="id-name">Data de termino:</label>
+        <input type="text" placeholder="01/2000">
+      </div>
+    </div>
+
   </div><!-- Formações -->
 
-  <div class="button-group">
-    <a href="#" class="button">Adicionar formação</a>
+  <div class="button-group right-button-group">
+    <a href="#" class="button" (click)="addFormation()">Adicionar formação</a>
+  </div>
+
+  <hr class="hr">
+
+  <div class="button-group right-button-group">
+    <button class="button">Baixar currículo</button>
   </div>
 
 </div>

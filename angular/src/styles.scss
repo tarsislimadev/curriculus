@@ -10,6 +10,12 @@ html,
 body {
   font-family: sans-serif;
   font-size: 16px;
+  padding-bottom: 3rem;
+}
+
+h1 {
+  padding: 1rem;
+  text-align: center;
 }
 
 h3 {
@@ -34,9 +40,17 @@ input {
   margin: 0px auto;
 }
 
-.grid-line {
+.g-line {
   display: flex;
   justify-content: space-between;
+  // margin-bottom: 1rem;
+}
+
+.g-column-3 {
+  width: calc(calc(100% / 3) - 1%);
+}
+
+.input-text {
   margin-bottom: 1rem;
 }
 
@@ -49,26 +63,50 @@ input {
   select {
     margin-right: 1rem;
     padding: .5rem;
-    width: calc(100% - 1rem);
+    width: 100%;
   }
 }
 
 .button-group {
-  .button {
+  a.button {
     display: inline-block;
     font-weight: bold;
-    padding-bottom: .5rem;
+    padding: .5rem 0;
     text-decoration: none;
 
     &:hover {
       text-decoration: underline;
     }
   }
+
 }
 
-.field-job-title { width: 10%; }
-.field-job-name { width: 90%; }
-.field-job-employee { width: calc(50% - .5rem); }
-.field-job-address { width: calc(50% - .5rem); }
-.field-job-date-begin { width: calc(50% - .5rem); }
-.field-job-date-end { width: calc(50% - .5rem); }
+button.button {
+  display: inline-block;
+  font-weight: bold;
+  padding: 1rem;
+}
+
+.right-button-group {
+  text-align: right;
+
+  button.button {
+    text-align: center;
+  }
+}
+
+hr.hr {
+  margin: 2rem 0;
+}
+
+.g-column-10 { width: 10%; }
+.g-column-90 { width: 90%; }
+.g-column-50 { width: 50%; }
+.g-column-100 { width: 100%; }
+
+.g-line {
+  & > .g-column-10 { width: calc(10% - .5rem); }
+  & > .g-column-50 { width: calc(50% - .5rem); }
+  & > .g-column-90 { width: calc(90% - .5rem); }
+  // & > .g-column-100 { width: calc(100% - .5rem); }
+}
