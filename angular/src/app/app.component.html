@@ -1,52 +1,79 @@
 <div class="container">
   <h1>Curriculo API</h1>
 
+  <div class="line"></div>
+
+  <h3>Dados pessoais</h3>
+
   <div class="input-text">
     <label for="id-name">Nome:</label>
-    <input type="text" placeholder="Jonas Silva">
+    <input type="text" placeholder="Jonas Silva" [(ngModel)]="form.name">
   </div>
 
   <div class="g-line">
     <div class="g-column-3">
       <div class="input-text">
         <label for="id-name">Data de nascimento:</label>
-        <input type="text" placeholder="01/01/2001">
+        <input type="text" placeholder="01/01/2001" [(ngModel)]="form.birthday.value">
       </div>
     </div>
     <div class="g-column-3">
       <div class="input-unique">
         <label for="id-name">Estado cívil:</label>
-        <select>
-          <option *ngFor="let personal_status_type of personal_status_types" value="{{ personal_status_type.key }}">{{ personal_status_type.value }}</option>
+        <select [(ngModel)]="form.marital_status">
+          <option *ngFor="let personal_status_type of personal_status_types" value="{{ personal_status_type.key }}">{{
+            personal_status_type.value }}</option>
         </select>
       </div>
     </div>
     <div class="g-column-3">
       <div class="input-text">
         <label for="id-name">Número de filhos:</label>
-        <input type="text" placeholder="">
+        <input type="text" placeholder="" [(ngModel)]="form.children_number">
       </div>
     </div>
   </div>
 
-  <div class="input-text">
-    <label for="id-name">Endereço:</label>
-    <input type="text" placeholder="">
+  <div class="g-line">
+    <div class="g-column-3">
+      <div class="input-text">
+        <label for="id-name">Bairro:</label>
+        <input type="text" placeholder="Centro" [(ngModel)]="form.address.neighboor">
+      </div>
+    </div>
+    <div class="g-column-3">
+      <div class="input-text">
+        <label for="id-name">Cidade:</label>
+        <input type="text" placeholder="Campinas" [(ngModel)]="form.address.city">
+      </div>
+    </div>
+    <div class="g-column-3">
+      <div class="input-unique">
+        <label for="id-name">Estado:</label>
+        <select [(ngModel)]="form.address.state">
+          <option *ngFor="let state of states" value="{{ state.key }}">{{ state.value }}</option>
+        </select>
+      </div>
+    </div>
   </div>
 
+  <div class="line"></div>
 
   <h3>Contatos</h3>
 
   <div *ngFor="let contact of form.contact_list">
-    
+
     <div class="g-line">
       <div class="input-unique g-column-10">
-        <select>
-          <option *ngFor="let contact_type of contact_types" value="{{ contact_type.key }}">{{ contact_type.value }}</option>
+        <label for="">Contato:</label>
+        <select [(ngModel)]="contact.type">
+          <option *ngFor="let contact_type of contact_types" value="{{ contact_type.key }}">{{ contact_type.value }}
+          </option>
         </select>
       </div>
       <div class="input-text g-column-90">
-        <input type="text" placeholder="">
+        <label for="">&nbsp;</label>
+        <input type="text" placeholder="" [(ngModel)]="contact.value">
       </div>
     </div>
 
@@ -56,6 +83,8 @@
     <a href="#" class="button" (click)="addContact()">Adicionar contato</a>
   </div>
 
+  <div class="line"></div>
+
   <h3>Experiências</h3>
 
   <div *ngFor="let experience of form.experience_list">
@@ -63,38 +92,73 @@
     <div class="g-line">
       <div class="input-unique g-column-10">
         <label for="id-name">Contrato:</label>
-        <select>
+        <select [(ngModel)]="experience.job_type">
           <option *ngFor="let job_type of job_types" value="{{ job_type.key }}">{{ job_type.value }}</option>
         </select>
       </div>
 
       <div class="input-text g-column-90">
         <label for="id-name">Cargo:</label>
-        <input type="text" placeholder="Engenheiro">
+        <input type="text" placeholder="Engenheiro" [(ngModel)]="experience.job_name">
       </div>
     </div>
 
     <div class="g-line">
       <div class="input-text g-column-50">
         <label for="id-name">Empresa:</label>
-        <input type="text" placeholder="Microsoft">
+        <input type="text" placeholder="Microsoft" [(ngModel)]="experience.employee_name">
       </div>
 
-      <div class="input-text g-column-50">
-        <label for="id-name">Cidade / Estado:</label>
-        <input type="text" placeholder="São Paulo / SP">
+      <div class="g-column-50 g-line">
+        <div class="g-column-50">
+          <div class="input-text">
+            <label for="id-name">Cidade:</label>
+            <input type="text" placeholder="Campinas" [(ngModel)]="experience.address.city">
+          </div>
+        </div>
+        <div class="g-column-50">
+          <div class="input-unique">
+            <label for="id-name">Estado:</label>
+            <select [(ngModel)]="experience.address.state">
+              <option *ngFor="let state of states" value="{{ state.key }}">{{ state.value }}</option>
+            </select>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="g-line">
-      <div class="input-text g-column-50">
-        <label for="id-name">Data de início:</label>
-        <input type="text" placeholder="01/1990">
+
+      <div class="g-line g-column-50">
+        <div class="input-text g-column-25">
+          <label for="id-name">Início:</label>
+          <input type="text" placeholder="01" [(ngModel)]="experience.date_begin.date">
+        </div>
+        <div class="input-text g-column-25">
+          <label for="id-name">&nbsp;</label>
+          <input type="text" placeholder="01" [(ngModel)]="experience.date_begin.month">
+        </div>
+        <div class="input-text g-column-50">
+          <label for="id-name">&nbsp;</label>
+          <input type="text" placeholder="2000" [(ngModel)]="experience.date_begin.year">
+        </div>
       </div>
-      <div class="input-text g-column-50">
-        <label for="id-name">Data de termino:</label>
-        <input type="text" placeholder="01/2000">
+
+      <div class="g-line g-column-50">
+        <div class="input-text g-column-25">
+          <label for="id-name">Fim:</label>
+          <input type="text" placeholder="01" [(ngModel)]="experience.date_end.date">
+        </div>
+        <div class="input-text g-column-25">
+          <label for="id-name">&nbsp;</label>
+          <input type="text" placeholder="01" [(ngModel)]="experience.date_end.month">
+        </div>
+        <div class="input-text g-column-50">
+          <label for="id-name">&nbsp;</label>
+          <input type="text" placeholder="2000" [(ngModel)]="experience.date_end.year">
+        </div>
       </div>
+
     </div>
 
   </div><!-- Experiências -->
@@ -103,34 +167,96 @@
     <a href="#" class="button" (click)="addExperience()">Adicionar experiência</a>
   </div>
 
+  <div class="line"></div>
+
   <h3>Formações</h3>
 
   <div *ngFor="let formation of form.formation_list">
 
-    <div class="input-text g-column-formation-class-name">
-      <label for="id-name">Curso:</label>
-      <input type="text" placeholder="Engenharia Elétrica">
-    </div>
+    <div class="g-line">
 
-    <div class="input-text g-column-formation-school">
-      <label for="id-name">Instituição de ensino:</label>
-      <input type="text" placeholder="Anhanguera">
-    </div>
+      <div class="input-unique g-column-25">
+        <label for="id-name">Tipo:</label>
+        <select [(ngModel)]="formation.type">
+          <option *ngFor="let formation_type of formation_types" value="{{ formation_type.key }}">{{ formation_type.value }}</option>
+        </select>
+      </div>
 
-    <div class="input-text g-column-formation-city">
-      <label for="id-name">Cidade / Estado:</label>
-      <input type="text" placeholder="São Paulo / SP">
+      <div class="input-text g-column-75">
+        <label for="id-name">Curso:</label>
+        <input type="text" placeholder="Engenharia Elétrica" [(ngModel)]="formation.class_name">
+      </div>
+
     </div>
 
     <div class="g-line">
-      <div class="input-text g-column-formation-date-begin g-column-50">
-        <label for="id-name">Data de início:</label>
-        <input type="text" placeholder="01/1990">
+      <div class="input-text g-column-50">
+        <label for="id-name">Instituição de ensino:</label>
+        <input type="text" placeholder="Anhanguera" [(ngModel)]="formation.school_name">
       </div>
-      <div class="input-text g-column-formation-date-end g-column-50">
-        <label for="id-name">Data de termino:</label>
-        <input type="text" placeholder="01/2000">
+
+      <div class="g-column-50 g-line">
+
+        <div class="g-column-50">
+          <div class="input-text">
+            <label for="id-name">Cidade:</label>
+            <input type="text" placeholder="Campinas" [(ngModel)]="formation.address.city">
+          </div>
+        </div>
+
+        <div class="g-column-50">
+          <div class="input-unique">
+            <label for="id-name">Estado:</label>
+            <select [(ngModel)]="formation.address.state">
+              <option *ngFor="let state of states" value="{{ state.key }}">{{ state.value }}</option>
+            </select>
+          </div>
+        </div>
+
       </div>
+
+    </div>
+
+    <div class="g-line">
+
+      <div class="g-line g-column-50">
+
+        <div class="input-text g-column-25">
+          <label for="id-name">Início:</label>
+          <input type="text" placeholder="01" [(ngModel)]="formation.date_begin.date">
+        </div>
+
+        <div class="input-text g-column-25">
+          <label for="id-name">&nbsp;</label>
+          <input type="text" placeholder="01" [(ngModel)]="formation.date_begin.month">
+        </div>
+
+        <div class="input-text g-column-50">
+          <label for="id-name">&nbsp;</label>
+          <input type="text" placeholder="2000" [(ngModel)]="formation.date_begin.year">
+        </div>
+
+      </div>
+
+      <div class="g-line g-column-50">
+
+        <div class="input-text g-column-25">
+          <label for="id-name">Fim:</label>
+          <input type="text" placeholder="01" [(ngModel)]="formation.date_end.date">
+        </div>
+
+        <div class="input-text g-column-25">
+          <label for="id-name">&nbsp;</label>
+          <input type="text" placeholder="01" [(ngModel)]="formation.date_end.month">
+        </div>
+
+        <div class="input-text g-column-50">
+          <label for="id-name">&nbsp;</label>
+          <input type="text" placeholder="2000" [(ngModel)]="formation.date_end.year">
+        </div>
+
+      </div>
+
     </div>
 
   </div><!-- Formações -->
@@ -139,7 +265,7 @@
     <a href="#" class="button" (click)="addFormation()">Adicionar formação</a>
   </div>
 
-  <hr class="hr">
+  <div class="line"></div>
 
   <div class="button-group right-button-group">
     <button class="button">Baixar currículo</button>
