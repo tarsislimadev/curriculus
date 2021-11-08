@@ -2,8 +2,9 @@
 * {
   border: none;
   box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
+  margin: 0rem;
+  outline: none;
+  padding: 0rem;
 }
 
 html,
@@ -29,21 +30,20 @@ label {
 }
 
 input {
-  box-shadow: 0px 0px 0px 1px #000000;
+  box-shadow: 0rem 0rem 0rem calc(1rem / 16) #000000;
   font: inherit;
   outline: none;
   padding: .5rem;
 }
 
 .container {
-  width: 1024px;
-  margin: 0px auto;
+  width: 64rem;
+  margin: 0rem auto;
 }
 
 .g-line {
   display: flex;
   justify-content: space-between;
-  // margin-bottom: 1rem;
 }
 
 .g-column-3 {
@@ -78,7 +78,6 @@ input {
       text-decoration: underline;
     }
   }
-
 }
 
 button.button {
@@ -95,18 +94,29 @@ button.button {
   }
 }
 
-hr.hr {
-  margin: 2rem 0;
+.line {
+  box-shadow: 0rem 0rem 0rem calc(1rem / 16) #000000;
+  display: inline-block;
+  height: 0rem;
+  margin: 0rem;
+  padding: 0rem;
+  width: 100%;
 }
 
 .g-column-10 { width: 10%; }
-.g-column-90 { width: 90%; }
+.g-column-25 { width: 25%; }
+.g-column-33 { width: calc(100% / 3); }
 .g-column-50 { width: 50%; }
+.g-column-75 { width: 75%; }
+.g-column-90 { width: 90%; }
 .g-column-100 { width: 100%; }
 
 .g-line {
   & > .g-column-10 { width: calc(10% - .5rem); }
+  & > .g-column-25 { width: calc(25% - .5rem); }
+  & > .g-column-33 { width: calc(calc(100% / 3) - .5rem); }
   & > .g-column-50 { width: calc(50% - .5rem); }
+  & > .g-column-75 { width: calc(75% - .5rem); }
   & > .g-column-90 { width: calc(90% - .5rem); }
-  // & > .g-column-100 { width: calc(100% - .5rem); }
+  & > .g-column-100 { width: calc(100% - .5rem); }
 }
