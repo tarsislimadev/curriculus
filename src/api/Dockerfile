@@ -8,4 +8,6 @@ WORKDIR /app
 
 COPY . .
 
-CMD npm ci && npm start
+RUN npm ci
+
+CMD npm start

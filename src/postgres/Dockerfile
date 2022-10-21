@@ -1,6 +1,4 @@
-FROM nginx:alpine
-
-# FROM postgres:13.4-alpine
+FROM postgres:alpine
 
 ENV POSTGRES_PASSWORD=pdf
 

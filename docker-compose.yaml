@@ -1,34 +1,28 @@
 version: '3'
 
 services:
+
   postgres:
-    restart: always
-    build:
-      context: ./src/postgres
-      dockerfile: Dockerfile.dev
+    build: ./src/postgres
     ports:
       - '5432:5432'
+
   api:
-    restart: always
-    build:
-      context: ./src/api
-      dockerfile: Dockerfile.dev
+    build: ./src/api
     ports:
       - '80:80'
     volumes:
       - './src/api:/app'
+
   # frontend:
-  #   restart: always
   #   image: nginx:1.21-alpine
   #   ports:
   #     - '2200:80'
   #   volumes:
   #     - './src/frontend:/usr/share/nginx/html'
+
   angular:
-    restart: always
-    build:
-      context: ./src/angular
-      dockerfile: Dockerfile.dev
+    build: ./src/angular
     ports:
       - '2300:4200'
     volumes:
