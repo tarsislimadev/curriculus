@@ -1,33 +1,15 @@
-# PDF API (Node.js)
+# PDF API
 
-API em Node.js para produção de currículos em PDF.
+Geração de currículos em PDF
 
-## Tecnologias / Ferramentas
+## Stack
 
-[x] JavaScript
+[Node.js]()
 
-[x] Node.js
+## How to
 
-[x] Angular
+TODO
 
-[ ] SOLID
+## License
 
-[x] REST API
-
-[ ] AWS
-
-[x] Docker
-
-[ ] Kubernetes
-
-[x] Postgres
-
-[ ] ElasticSearch
-
-[ ] Redis
-
-[ ] RabbitMQ
-
-[ ] Sequelize
-
-[ ] Material Design
+[MIT](./LICENSE)
