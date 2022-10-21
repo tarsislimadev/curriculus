@@ -4,32 +4,32 @@ services:
   postgres:
     restart: always
     build:
-      context: ./postgres
+      context: ./src/postgres
       dockerfile: Dockerfile.dev
     ports:
       - '5432:5432'
   api:
     restart: always
     build:
-      context: ./api
+      context: ./src/api
       dockerfile: Dockerfile.dev
     ports:
-      - '2100:80'
+      - '80:80'
     volumes:
-      - './api:/app'
+      - './src/api:/app'
   # frontend:
   #   restart: always
   #   image: nginx:1.21-alpine
   #   ports:
   #     - '2200:80'
   #   volumes:
-  #     - './frontend:/usr/share/nginx/html'
+  #     - './src/frontend:/usr/share/nginx/html'
   angular:
     restart: always
     build:
-      context: ./angular
+      context: ./src/angular
       dockerfile: Dockerfile.dev
     ports:
       - '2300:4200'
     volumes:
-      - './angular:/app'
+      - './src/angular:/app'
