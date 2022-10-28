@@ -1,6 +1,6 @@
 # PDF API
 
-Para gera currículos em PDF
+Para gerar currículos em PDF
 
 ## Stack
 
