@@ -4,11 +4,15 @@ Para gerar currículos em PDF
 
 ## Stack
 
-[Node.js]()
+[Node.js](https://nodejs.org/en/)
 
 ## How to
 
-TODO
+```
+bash env/pull.sh
+
+bash env/up.sh
+```
 
 ## License
 
