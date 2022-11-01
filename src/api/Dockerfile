@@ -1,4 +1,4 @@
-FROM node:lts
+FROM node:lts-alpine
 
 ENV API_URL=http://localhost:2100/v1
 
@@ -8,6 +8,6 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm ci
+# RUN npm ci
 
 CMD npm start
