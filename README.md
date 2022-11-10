@@ -9,8 +9,6 @@ Para geração de currículos em PDF
 ## How to
 
 ```
-bash env/pull.sh
-
 bash env/up.sh
 ```
 
