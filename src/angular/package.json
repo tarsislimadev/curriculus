@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
     "async": "^3.2.4",
+    "loader-utils": "^2.0.4",
     "minimist": "^1.2.7",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
