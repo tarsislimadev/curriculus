@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM node:alpine
 
 ENV API_URL=http://localhost:2100/v1
 

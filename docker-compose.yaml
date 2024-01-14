@@ -7,10 +7,6 @@ services:
       - '80:80'
     volumes:
       - './src/app:/app'
-  postgres:
-    build: ./src/postgres
-    ports:
-      - '5432:5432'
   angular:
     build: ./src/angular
     ports:
