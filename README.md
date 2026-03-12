@@ -1,6 +1,8 @@
 # PDF API
 
-Para geração de currículos em PDF
+Para geração de currículos em PDF. 
+
+Prevemos gerar Trabalhos de Conclusão de Curso também.
 
 ## Stack
 
@@ -15,3 +17,4 @@ bash env/up.sh
 ## License
 
 [MIT](./LICENSE)
+
