@@ -11,9 +11,3 @@ services:
       - '80:80'
     volumes:
       - './src/app:/app'
-  angular:
-    build: ./src/angular
-    ports:
-      - '2300:4200'
-    volumes:
-      - './src/angular:/app'
