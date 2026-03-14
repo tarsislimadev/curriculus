@@ -8,9 +8,10 @@ export class InputComponent extends Component {
   input = new InputElement({})
   error = new ErrorElement({})
 
-  constructor({ label = '' } = {}) {
+  constructor({ label = '', placeholder = '' } = {}) {
     super()
     this.label.setText(label)
+    this.input.setAttr('placeholder', placeholder)
   }
 
   onCreate() {
