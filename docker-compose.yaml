@@ -1,6 +1,10 @@
-version: '3'
-
 services:
+  public:
+    build: './src/public'
+    ports:
+      - '8080:80'
+    volumes:
+      - './src/public:/usr/share/nginx/html'
   app:
     build: ./src/app
     ports:
